@@ -1,5 +1,4 @@
 
-    <h1>Funciones</h1>
     <?php
     // Sin parametro
     function saludo (){
@@ -40,5 +39,3 @@
     }
 
     ?>
-</body>
-</html>
