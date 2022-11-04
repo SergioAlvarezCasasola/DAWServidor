@@ -103,4 +103,15 @@ preg_match_all($patron, $cadena, $array);
 // echo "<br> Cadena: " .$etiqueta3. " y patron: " .$patron. " Match " . preg_match($patron, $etiqueta3);
 // echo "<br> Cadena: " .$etiqueta4. " y patron: " .$patron. " Match " . preg_match($patron, $etiqueta4);
 // echo "<br> Cadena: " .$etiqueta5. " y patron: " .$patron. " Match " . preg_match($patron, $etiqueta5);
+
+// Expresiones regulares en arrays
+
+$lista =array('Maria','Criado','25','Zamora','Calle Requejo 25');
+$patron = '/^\d{1,3}$/';
+$numeros = preg_grep($patron, $lista);
+print_r($nuemros);
+
+$sustituir = 'numero';
+$cambiado=preg_replace($patron,$sustituir,$lista);
+print_r($cambiado);
 ?>
