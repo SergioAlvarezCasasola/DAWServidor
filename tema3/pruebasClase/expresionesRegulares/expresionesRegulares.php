@@ -104,14 +104,21 @@ preg_match_all($patron, $cadena, $array);
 // echo "<br> Cadena: " .$etiqueta4. " y patron: " .$patron. " Match " . preg_match($patron, $etiqueta4);
 // echo "<br> Cadena: " .$etiqueta5. " y patron: " .$patron. " Match " . preg_match($patron, $etiqueta5);
 
-// Expresiones regulares en arrays
+ //que nos devuelva lo que hay dentro de las etiquetas
 
-$lista =array('Maria','Criado','25','Zamora','Calle Requejo 25');
-$patron = '/^\d{1,3}$/';
-$numeros = preg_grep($patron, $lista);
-print_r($nuemros);
+ $patron= '/<[a-z]+[0-9]?>(.*)<\/?[a-z]+[0-9]?>/';
+ $cadena='<html>Dentro de una html</html> <a>Dentro de un enlace</a><h1>Dentro de un h1</h1>';
+ preg_match_all($patron, $cadena, $array);
+ echo "dentro de la etiqueta<br>";
 
-$sustituir = 'numero';
-$cambiado=preg_replace($patron,$sustituir,$lista);
-print_r($cambiado);
-?>
+ //Expresiones regulares en arrays
+ 
+ $lista = array('Maria','Criado','25','Zamora', 'Calle Requejo 25', '492');
+ $patron= '/^\d{1,3}$/';
+ $numeros = preg_grep($patron,$lista); //devuelve la posicion y el valor que se busca
+ print_r($numeros);
+
+ echo "<br>";
+ $sustituir= 'numero';
+ $cambiado= preg_replace($patron, $sustituir, $lista);  //cambia el valor que se busca en el patron
+ print_r($cambiado);
