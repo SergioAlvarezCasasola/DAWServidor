@@ -15,7 +15,6 @@
         <label for="alfabetico">Alfabetico</label>
         <input type="text" nombre="alfabetico" id="idAlfabetico" value="">
         
-        
     </p>
     <p>
         <label for="opAlfabetico">Alfabetico Opcional</label>
