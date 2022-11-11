@@ -13,7 +13,6 @@
 
         <title>PR08</title>
 
-        <link rel="stylesheet" href="">
     </head>
 
     <body>
@@ -21,14 +20,11 @@
         <h1>Formulario de Registro</h1>
 
         <?php
-
             if(enviado() && validarTodo()) {
                 mostrarTodo();
 
             } else {
-
         ?>
-
                 <form action="./PR08.php" method="post" enctype="multipart/form-data">
 
                     <!-- NOMBRE -->
@@ -51,7 +47,6 @@
                         ?>
                     </p>
 
-
                     <!-- NOMBRE OPCIONAL -->
                     <p>
                         <label for="idNombreOpcional">Alfabetico Opcional</label>
@@ -64,7 +59,6 @@
                             ?>"
                         >
                     </p>
-
 
                     <!-- APELLIDO (ALFANUMÉRICO) -->
                     <p>
@@ -86,7 +80,6 @@
                         ?>
                     </p>
 
-
                     <!-- APELLIDO OPCIONAL (ALFANUMÉRICO) -->
                     <p>
                         <label for="idApellidoOpcional">Alfanumerico Opcional</label>
@@ -99,7 +92,6 @@
                         >
                     </p>
                     
-
                     <!-- FECHA -->
                     <p>
                         <label for="idFecha">Fecha</label>
@@ -120,7 +112,6 @@
                         ?>
                     </p>
 
-
                     <!-- FECHA OPCIONAL -->
                     <p>
                         <label for="idFechaOpcional">Fecha Opcional</label>
@@ -132,7 +123,6 @@
                             ?>"
                         >
                     </p>
-
 
                     <!-- RADIO OBLIGATORIO -->
                     <p><b>Radio Obligatorio</b>
@@ -174,7 +164,6 @@
                         ?>
                     </p>
 
-
                     <!-- SELECT -->
                     <p><b>Elige una opcion:</b>
                     <select name="select" id="idOpcion">
@@ -203,7 +192,6 @@
                                 ?>
                             >Tercera</option>
                     </select>
-
                     <?php
                             // Comprobar que no este vacío, si lo está pongo un error
                             if (existe("select") && $_REQUEST['select'] == "0" && enviado()) {
@@ -214,9 +202,8 @@
                         ?>
                     </p>
 
-
                     <!-- CHECKBOX -->
-                    <p><b>Elige al menos 1 y maximo 3:</b>
+                    <p><b>Elige al menos 1 y maximo 4:</b>
                         <br>
                         <input type="checkbox" name="checks[]" id="idCheck1" value="Check1"
                             <?php
@@ -281,14 +268,13 @@
                             
                             } else if (existe("checks") && !checks("checks") && enviado()) {
                                 ?>
-                                <span style=color:red><-- Debe elegir entre 1 y 3 elementos!!</span>
+                                <span style=color:red><-- Debe elegir entre 1 y 4 elementos!!</span>
                                 <?
                             }
                                 
                             
                         ?>
                     </p>
-
 
                     <!-- TELEFONO -->
                     <p>
@@ -317,7 +303,6 @@
                         ?>
                     </p>
 
-
                     <!-- EMAIL -->
                     <p>
                         <label for="idEmail">Email</label>
@@ -337,7 +322,6 @@
                             }
                         ?>
                     </p>
-
 
                     <!-- CONTRASEÑA -->
                     <p>
@@ -359,7 +343,6 @@
                         ?>
                     </p>
 
-
                     <!-- SUBIR FICHERO -->
                     <p>Subir documento
                         <input type="file" name="fichero" id="idFichero"
@@ -377,23 +360,18 @@
                             }
                         ?>
                     </p>
-
                     <br>
-
                     <input type="submit" value="Enviar" name="enviar" style=width:170px>
-
                 </form>
             
         <?php
-        
             }
         ?>
         
         <br>
-        <a href="../../../verfichero.php?fichero=tema3/ejercicios/PR08/PR08.php" target="_blank">Código PR08.php</a>
+        <a href="verFichero.php?fichero=PR08.php" target="_blank">Código PR08.php</a>
         <br>
-        <a href="../../../verfichero.php?fichero=tema3/ejercicios/PR08/validar.php" target="_blank">Código validar.php</a>
-
+        <a href="verFichero.php?fichero=validar.php" target="_blank">Código validar.php</a>
 
     </body>
 </html>
