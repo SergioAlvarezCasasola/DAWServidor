@@ -122,5 +122,4 @@ preg_match_all($patron, $cadena, $array);
  $sustituir= 'numero';
  $cambiado= preg_replace($patron, $sustituir, $lista);  //cambia el valor que se busca en el patron
  print_r($cambiado);
-
  
