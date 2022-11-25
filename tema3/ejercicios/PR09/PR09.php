@@ -21,11 +21,12 @@
         <p>
             <label for="idNombre">Nombre</label>
             <input type="text" name="nombre" id="idNombre" 
-            value="<?php
-                if (enviado() && !vacio("nombre")) {
+                value="<?php
+                    if (enviado() && !vacio("nombre")) {
                     echo $_REQUEST["nombre"];
-                }
-            ?>">
+                    }
+                ?>"
+            >
             <?php
                 // Comprobar que no este vacío, si lo está pongo un error
                 if (vacio("nombre") && enviado()) {
@@ -38,12 +39,40 @@
         <!-- APELLIDOS -->
         <p>
             <label for="idApellido">Apellidos</label>
-            <input type="text" name="apellidos" id="idApellido">
+            <input type="text" name="apellidos" id="idApellido"
+                value="<?php
+                    if (enviado() && !vacio("apellidos")) {
+                        echo $_REQUEST["apellidos"];
+                    }
+                ?>"
+            >
+            <?php
+                // Comprobar que no este vacío, si lo está pongo un error
+                if (vacio("apellidos") && enviado()) {
+                    ?>
+                        <span style=color:red><-- Debe introducir un nombre!!</span>
+                    <?
+                }
+            ?>
         </p>
         <!-- FECHA -->
         <p>
         <label for="idFecha">Elija un fecha</label>
-        <input type="date" name="fecha"  />
+        <input type="date" name="fecha" 
+            value="<?php
+                if (enviado() && !vacio("fecha")) {
+                    echo $_REQUEST["fecha"];
+                }
+            ?>"
+        >
+        <?php
+            // Comprobar que no este vacío, si lo está pongo un error
+            if (vacio("fecha") && enviado()) {
+                ?>
+                    <span style=color:red><-- Debe introducir un nombre!!</span>
+                <?
+            }
+        ?>
         </p>
         <!-- DNI -->
         <p>
